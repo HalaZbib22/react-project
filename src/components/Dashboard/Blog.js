@@ -27,7 +27,7 @@ export default function Blog() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header title="Blog" />
+      <Header title="🐕 SideLick" />
       <Container maxWidth="lg">
         <main>
           <Grid container spacing={5} sx={{ mt: 3 }}>

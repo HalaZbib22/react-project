@@ -28,7 +28,11 @@ function Header(props) {
           <SearchIcon />
         </IconButton>
         <Button variant="outlined" size="small">
-          Sign up
+          Register
+        </Button>
+		&nbsp;&nbsp;
+		<Button variant="outlined" size="small">
+          Log Out
         </Button>
       </Toolbar>
       <Toolbar
