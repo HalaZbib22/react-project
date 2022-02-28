@@ -5,10 +5,11 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from "react-router-dom";
-import { ContactSupportOutlined } from '@mui/icons-material';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure()
 
 export default function ButtonAppBar() {
     const navigate = useNavigate();
@@ -21,12 +22,18 @@ export default function ButtonAppBar() {
       navigate("/signin");
   }
     const logoutClick = () => {
-      ttoken == null ? alert("you're not logged in!") : logout();
+      ttoken == null ? cantLogOut() : logout();
     }
     const logout = () => {
       navigate("/");
       localStorage.removeItem('token');
-      alert("Logged out successfully");
+      loggedOut();
+    }
+    const loggedOut = () => {
+      toast.success("Logged out successfully!", {position: toast.POSITION.TOP_CENTER, autoClose: 4000});
+    }
+    const cantLogOut = () => {
+      toast.warn("You're not logged in!", {position: toast.POSITION.TOP_CENTER, autoClose: 4000});
     }
 
   return (
@@ -34,7 +41,7 @@ export default function ButtonAppBar() {
       <AppBar position="fixed" color="warning">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link to='/' style={{ textDecoration: 'none', color: 'white', cursor: 'pointer' }}>🐕‍🦺 SideLick</Link>
+            <Link to='/' style={{ textDecoration: 'none', color: 'white', cursor: 'pointer' }}>🐕 SideLick</Link>
           </Typography>
           <Link to='/signin' style={{ textDecoration: 'none', color: 'white' }}><Button onClick={signinClick} color="inherit">Login</Button></Link>
 		  <Link to='/signup' style={{ textDecoration: 'none', color: 'white' }}><Button onClick={registerClick} color="inherit">Register</Button></Link>

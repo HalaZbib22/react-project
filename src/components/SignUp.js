@@ -49,7 +49,6 @@ export default function SignUp() {
       password: data.get('password'),
       password_confirmation: data.get('password_confirmation'),
     }
-    // console.log(userData);
     try {
       const response = await axios.post(Register_URL, userData);
       // console.log(JSON.stringify(response?.data));

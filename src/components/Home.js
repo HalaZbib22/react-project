@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 
 const Home = () => {
     const ttoken = JSON.parse(localStorage.getItem('token'));
