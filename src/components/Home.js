@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import accessToken from './SignIn';
 
 const Home = () => {
 	const User_URL = "http://127.0.0.1:8000/api/auth//user-profile";

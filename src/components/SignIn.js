@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
   return (
@@ -30,6 +31,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+  const navigate = useNavigate();
   const Login_URL = "http://127.0.0.1:8000/api/auth/login";
 
   const handleSubmit = async(e) => {
@@ -46,7 +48,8 @@ export default function SignIn() {
       // console.log(JSON.stringify(response?.data));
       const accessToken = response?.data?.access_token;
       // console.log(accessToken);
-      console.log(userData.email,'logged in')
+      console.log(userData.email,'logged in');
+      navigate("/home");
     } catch (err) {
       console.log(err);
     }

@@ -36,6 +36,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
+  const navigate = useNavigate();
   const Register_URL = "http://127.0.0.1:8000/api/auth/register";
 
   const handleSubmit = async(e) => {
@@ -52,77 +53,14 @@ export default function SignUp() {
     try {
       const response = await axios.post(Register_URL, userData);
       // console.log(JSON.stringify(response?.data));
-      const accessToken = response?.data?.access_token;
-      // console.log(accessToken);
       console.log(userData.name, 'signed up using this email', userData.email);
+      navigate("/signin");
     } catch (err) {
       console.log(err);
-    }
-  };
 
-  // -------------------------------------------------------------------
-
-  const constructor = (props) => {
-
-    this.state = {
-      fields: {},
-      errors: {},
-    };
-  };
-
-  const handleValidation = () => {
-    let fields = this.state.fields;
-    let errors = {};
-    let formIsValid = true;
-
-    //Name
-    if (!fields["firstName"]) {
-      formIsValid = false;
-      errors["firstName"] = "Cannot be empty";
-    }
-    if (!fields["lastName"]) {
-      formIsValid = false;
-      errors["lastName"] = "Cannot be empty";
     }
 
-    //Email
-    if (!fields["email"]) {
-      formIsValid = false;
-      errors["email"] = "Cannot be empty";
-    }
-
-    //password
-    if (!fields["password"]) {
-      formIsValid = false;
-      errors["password"] = "Cannot be empty";
-    }
-    if (!fields["password_confirmation"]) {
-      formIsValid = false;
-      errors["password_confirmation"] = "Cannot be empty";
-    }
-
-    this.setState({ errors: errors });
-    return formIsValid;
-  }
-
-  const contactSubmit = (e) => {
-    e.preventDefault();
-
-    if (this.handleValidation()) {
-      alert("Form submitted");
-    } else {
-      alert("Form has errors.");
-    }
-  }
-
-  const handleChange = (field, e) => {
-    let fields = this.state.fields;
-    fields[field] = e.target.value;
-    this.setState({ fields });
-  }
-
-  // -------------------------------------------------------------------
-
+};
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -211,7 +149,6 @@ export default function SignUp() {
               </Grid>
             </Grid>
             <Button
-            onClick={SignUp}
               type="submit"
               fullWidth
               variant="contained"
