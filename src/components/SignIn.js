@@ -47,7 +47,7 @@ export default function SignIn() {
       const response = await axios.post(Login_URL, userData);
       // console.log(JSON.stringify(response?.data));
       // set token
-      localStorage.setItem('token',response?.data?.access_token);
+      localStorage.setItem('token',JSON.stringify(response?.data));
       console.log(userData.email,'logged in');
       navigate("/home");
     } catch (err) {

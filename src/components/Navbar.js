@@ -8,11 +8,11 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ContactSupportOutlined } from '@mui/icons-material';
 
 export default function ButtonAppBar() {
     const navigate = useNavigate();
+    const ttoken = JSON.parse(localStorage.getItem('token'));
 
     const signinClick = () => {
         navigate("/home");
@@ -21,9 +21,12 @@ export default function ButtonAppBar() {
       navigate("/signin");
   }
     const logoutClick = () => {
-      !localStorage.getItem('token') ? toast("you're not logged in!") : navigate("/");
-      console.log("this user logged out!");
-      console.log(localStorage.getItem('token'));
+      ttoken == null ? alert("you're not logged in!") : logout();
+    }
+    const logout = () => {
+      navigate("/");
+      localStorage.removeItem('token');
+      alert("Logged out successfully");
     }
 
   return (

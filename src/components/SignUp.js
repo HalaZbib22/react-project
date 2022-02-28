@@ -53,6 +53,7 @@ export default function SignUp() {
     try {
       const response = await axios.post(Register_URL, userData);
       // console.log(JSON.stringify(response?.data));
+      console.log(JSON.stringify(response?.data));
       console.log(userData.name, 'signed up using this email', userData.email);
       navigate("/signin");
     } catch (err) {
