@@ -8,6 +8,8 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ButtonAppBar() {
     const navigate = useNavigate();
@@ -19,8 +21,10 @@ export default function ButtonAppBar() {
       navigate("/signin");
   }
     const logoutClick = () => {
-      navigate("/");
-  }
+      !localStorage.getItem('token') ? toast("you're not logged in!") : navigate("/");
+      console.log("this user logged out!");
+      console.log(localStorage.getItem('token'));
+    }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
