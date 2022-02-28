@@ -40,12 +40,13 @@ export default function SignIn() {
       email: data.get('email'),
       password: data.get('password'),
     }
-    console.log(userData);
+    // console.log(userData);
     try {
       const response = await axios.post(Login_URL, userData);
-      console.log(JSON.stringify(response?.data));
+      // console.log(JSON.stringify(response?.data));
       const accessToken = response?.data?.access_token;
-      console.log(accessToken);
+      // console.log(accessToken);
+      console.log(userData.email,'logged in')
     } catch (err) {
       console.log(err);
     }
