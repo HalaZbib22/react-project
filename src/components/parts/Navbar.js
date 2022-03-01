@@ -47,7 +47,7 @@ export default function ButtonAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" color="warning">
         <Toolbar>
-        <Avatar src="/broken-image.jpg" /> &nbsp;&nbsp;
+        {/* <Avatar src="/broken-image.jpg" /> &nbsp;&nbsp; */}
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link
               to="/"
