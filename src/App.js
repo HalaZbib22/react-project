@@ -5,6 +5,7 @@ import Navbar from './components/parts/Navbar';
 import Blog from './components/parts/Blog';
 import Home from './components/Home';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import ProtectedRoutes from './ProtectedRoutes';
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
           <Navbar />
           <Routes>
           <Route path='/' exact element={<Blog/>}/>
+          <Route element={<ProtectedRoutes/>}>
             <Route path='/home' exact element={<Home/>}/>
+          </Route>
             <Route path='/signin' element={<SignIn/>}/>
             <Route path='/signup' element={<SignUp/>}/>
           </Routes>
