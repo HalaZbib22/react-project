@@ -11,11 +11,10 @@ Heading,
 const Footer = () => {
 return (
 	<Box>
-	<h1 style={{ color: "green",
+	{/* <h1 style={{ color: "green",
 				textAlign: "center",
 				marginTop: "-50px" }}>
-		GeeksforGeeks: A Computer Science Portal for Geeks
-	</h1>
+	</h1> */}
 	<Container>
 		<Row>
 		<Column>
@@ -33,10 +32,10 @@ return (
 		</Column>
 		<Column>
 			<Heading>Contact Us</Heading>
-			<FooterLink href="#">Uttar Pradesh</FooterLink>
-			<FooterLink href="#">Ahemdabad</FooterLink>
-			<FooterLink href="#">Indore</FooterLink>
-			<FooterLink href="#">Mumbai</FooterLink>
+			<FooterLink href="#">Detroit</FooterLink>
+			<FooterLink href="#">Los Angelos</FooterLink>
+			<FooterLink href="#">New York</FooterLink>
+			<FooterLink href="#">Washington</FooterLink>
 		</Column>
 		<Column>
 			<Heading>Social Media</Heading>

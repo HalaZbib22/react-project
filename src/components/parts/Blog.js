@@ -7,8 +7,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Sidebar from "./Sidebar";
-import Footer from "../ContactUs/Footer";
 import Slider from "../Slider/Slider";
+import Footer from "../ContactUs/Footer";
 
 const sidebar = {
   social: [
@@ -37,13 +37,10 @@ export default function Blog() {
               overflow: "visible",
             }}
           >
-            <Sidebar social={sidebar.social} />
+            {/* <Sidebar social={sidebar.social} /> */}
           </Grid>
         </Container>
-        <Footer
-          title="Footer"
-          description="Something here to give the footer a purpose!"
-        />
+        <Footer/>
       </ThemeProvider>
     </div>
   );
