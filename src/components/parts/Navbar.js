@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Avatar } from '@mui/material';
+// import { Avatar } from '@mui/material';
 
 toast.configure();
 
@@ -31,6 +31,7 @@ export default function ButtonAppBar() {
     loggedOut();
   };
   const loggedOut = () => {
+    console.log("Logged out successfully!");
     toast.success("Logged out successfully!", {
       position: toast.POSITION.TOP_CENTER,
       autoClose: 4000,
@@ -54,23 +55,23 @@ export default function ButtonAppBar() {
               style={{
                 textDecoration: "none",
                 color: "white",
-                cursor: "pointer",
+                cursor: "pointer",fontWeight:'lighter', fontSize:35,
               }}
             > 🐕 SideLick
             </Link>
           </Typography>
           <Link to="/signin" style={{ textDecoration: "none", color: "white" }}>
-            <Button onClick={signinClick} color="inherit">
+            <Button onClick={signinClick} color="inherit" fontWeight='bold' style={{fontSize:20}}>
               Login
             </Button>
           </Link>
           <Link to="/signup" style={{ textDecoration: "none", color: "white" }}>
-            <Button onClick={registerClick} color="inherit">
+            <Button onClick={registerClick} color="inherit" fontWeight='bold' style={{fontSize:20}}>
               Register
             </Button>
           </Link>
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <Button onClick={logoutClick} color="inherit">
+            <Button onClick={logoutClick} color="inherit" fontWeight='bold' style={{fontSize:20}}>
               Logout
             </Button>
           </Link>
