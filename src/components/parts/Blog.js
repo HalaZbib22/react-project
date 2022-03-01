@@ -7,7 +7,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Sidebar from "./Sidebar";
-import Footer from "./Footer";
+import Footer from "../ContactUs/Footer";
 import Slider from "../Slider/Slider";
 
 const sidebar = {
