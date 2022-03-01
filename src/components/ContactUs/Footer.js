@@ -11,56 +11,52 @@ Heading,
 const Footer = () => {
 return (
 	<Box>
-	{/* <h1 style={{ color: "green",
-				textAlign: "center",
-				marginTop: "-50px" }}>
-	</h1> */}
 	<Container>
 		<Row>
 		<Column>
 			<Heading>About Us</Heading>
-			<FooterLink href="#">Aim</FooterLink>
-			<FooterLink href="#">Vision</FooterLink>
-			<FooterLink href="#">Testimonials</FooterLink>
+			<FooterLink >Aim</FooterLink>
+			<FooterLink >Vision</FooterLink>
+			<FooterLink >Testimonials</FooterLink>
 		</Column>
 		<Column>
 			<Heading>Services</Heading>
-			<FooterLink href="#">Writing</FooterLink>
-			<FooterLink href="#">Internships</FooterLink>
-			<FooterLink href="#">Coding</FooterLink>
-			<FooterLink href="#">Teaching</FooterLink>
+			<FooterLink >Writing</FooterLink>
+			<FooterLink >Internships</FooterLink>
+			<FooterLink >Coding</FooterLink>
+			<FooterLink >Teaching</FooterLink>
 		</Column>
 		<Column>
 			<Heading>Contact Us</Heading>
-			<FooterLink href="#">Detroit</FooterLink>
-			<FooterLink href="#">Los Angelos</FooterLink>
-			<FooterLink href="#">New York</FooterLink>
-			<FooterLink href="#">Washington</FooterLink>
+			<FooterLink >Detroit</FooterLink>
+			<FooterLink >Los Angelos</FooterLink>
+			<FooterLink >New York</FooterLink>
+			<FooterLink >Washington</FooterLink>
 		</Column>
 		<Column>
 			<Heading>Social Media</Heading>
-			<FooterLink href="#">
+			<FooterLink href="https://www.facebook.com/" target="_blank">
 			<i className="fab fa-facebook-f">
 				<span style={{ marginLeft: "10px" }}>
 				Facebook
 				</span>
 			</i>
 			</FooterLink>
-			<FooterLink href="#">
+			<FooterLink href="https://www.instagram.com/" target="_blank">
 			<i className="fab fa-instagram">
 				<span style={{ marginLeft: "10px" }}>
 				Instagram
 				</span>
 			</i>
 			</FooterLink>
-			<FooterLink href="#">
+			<FooterLink href="https://www.twitter.com/" target="_blank">
 			<i className="fab fa-twitter">
 				<span style={{ marginLeft: "10px" }}>
 				Twitter
 				</span>
 			</i>
 			</FooterLink>
-			<FooterLink href="#">
+			<FooterLink href="https://www.youtube.com/" target="_blank">
 			<i className="fab fa-youtube">
 				<span style={{ marginLeft: "10px" }}>
 				Youtube
