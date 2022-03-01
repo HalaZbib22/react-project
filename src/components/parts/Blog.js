@@ -8,7 +8,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
-import Slider from '../Slider/Slider';
+import Slider from "../Slider/Slider";
 
 const sidebar = {
   social: [
@@ -19,28 +19,32 @@ const sidebar = {
 };
 const theme = createTheme();
 
-export default function Blog(){
+export default function Blog() {
   return (
     <div>
-    <ThemeProvider theme={theme}>
-      <CssBaseline/>
-      <Container maxWidth="lg">
-        <Grid container spacing={5} style={{
-    paddingTop: '100px',
-  }}
-  containerStyle={{
-    position: 'relative',
-    overflow: 'visible'
-  }}>
-    <Slider/>
-          <Sidebar social={sidebar.social} />
-        </Grid>
-      </Container>
-      <Footer
-        title="Footer"
-        description="Something here to give the footer a purpose!"
-      />
-    </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Container maxWidth="lg">
+        <Slider />
+          <Grid
+            container
+            spacing={5}
+            style={{
+              paddingTop: "100px",
+            }}
+            containerStyle={{
+              position: "relative",
+              overflow: "visible",
+            }}
+          >
+            <Sidebar social={sidebar.social} />
+          </Grid>
+        </Container>
+        <Footer
+          title="Footer"
+          description="Something here to give the footer a purpose!"
+        />
+      </ThemeProvider>
     </div>
   );
 }
