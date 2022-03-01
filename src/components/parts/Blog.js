@@ -8,6 +8,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
+import Slider from '../Slider/Slider';
 
 const sidebar = {
   social: [
@@ -31,6 +32,7 @@ export default function Blog(){
     position: 'relative',
     overflow: 'visible'
   }}>
+    <Slider/>
           <Sidebar social={sidebar.social} />
         </Grid>
       </Container>
