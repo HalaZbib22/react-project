@@ -5,6 +5,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Slider from "../Slider/Slider";
 import Footer from "../ContactUs/Footer";
+import Navbar from "./Navbar"
 
 const theme = createTheme();
 
@@ -13,6 +14,7 @@ export default function Blog() {
     <div>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <Navbar />
         <Container maxWidth="lg">
         <Slider />
           <Grid

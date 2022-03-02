@@ -11,7 +11,7 @@ function App() {
   return (
       <div>
         <BrowserRouter>
-          <Navbar />
+          {/* <Navbar /> */}
           <Routes>
           <Route path='/' exact element={<Blog/>}/>
           <Route element={<ProtectedRoutes/>}>
