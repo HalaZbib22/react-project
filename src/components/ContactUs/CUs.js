@@ -1,6 +1,6 @@
 import * as React from "react";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
+import { Avatar } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
@@ -8,10 +8,10 @@ import AssignmentIcon from "@mui/icons-material/Assignment";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 function Copyright(props) {
   return (
@@ -33,7 +33,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function Form() {
+export default function CUs() {
   const navigate = useNavigate();
   const Contact_Us_URL = "http://127.0.0.1:8000/api/contact-us";
 
@@ -49,7 +49,7 @@ export default function Form() {
     try {
       await axios.post(Contact_Us_URL, userData);
       toast.success("Message sent successfully", {
-        position: toast.POSITION.TOP_RIGHT,
+        position: toast.POSITION.TOP_CENTER,
         autoClose: 4000,
       });
       navigate("/");
@@ -76,7 +76,7 @@ export default function Form() {
           <Typography component="h1" variant="h5">
             Contact Us
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+          <Box component="form" noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               color="warning"
@@ -113,8 +113,10 @@ export default function Form() {
               name="message"
             />
             <Button
-              type="submit"
               fullWidth
+			  type='submit'
+              component="form"
+              onSubmit={handleSubmit}
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
               color="warning"

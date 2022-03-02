@@ -59,7 +59,7 @@ return (
 			</FooterLink>
 		</Column>
 		<Column>
-		<Link to='/contactus' replace style={{ textDecoration: 'none' }}><Heading>Contact Us</Heading></Link>
+		<Link to='/contact-us' replace style={{ textDecoration: 'none', cursor:'pointer' }}><Heading>Contact Us</Heading></Link>
 		</Column>
 		</Row>
 	</Container>
