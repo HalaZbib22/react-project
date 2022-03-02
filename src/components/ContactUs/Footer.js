@@ -7,6 +7,8 @@ Column,
 FooterLink,
 Heading,
 } from "./FooterStyles";
+import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
 
 const Footer = () => {
 return (
@@ -25,13 +27,6 @@ return (
 			<FooterLink >Internships</FooterLink>
 			<FooterLink >Coding</FooterLink>
 			<FooterLink >Teaching</FooterLink>
-		</Column>
-		<Column>
-			<Heading>Contact Us</Heading>
-			<FooterLink >Detroit</FooterLink>
-			<FooterLink >Los Angelos</FooterLink>
-			<FooterLink >New York</FooterLink>
-			<FooterLink >Washington</FooterLink>
 		</Column>
 		<Column>
 			<Heading>Social Media</Heading>
@@ -63,6 +58,10 @@ return (
 				</span>
 			</i>
 			</FooterLink>
+		</Column>
+		<Column>
+			<Heading>Contact Us</Heading>
+			
 		</Column>
 		</Row>
 	</Container>
