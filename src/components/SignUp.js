@@ -95,6 +95,7 @@ export default function SignUp() {
                   id="firstName"
                   label="First Name"
                   autoFocus
+                  color="warning"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -105,6 +106,7 @@ export default function SignUp() {
                   label="Last Name"
                   name="lastName"
                   autoComplete="family-name"
+                  color="warning"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -115,6 +117,7 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  color="warning"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -126,6 +129,7 @@ export default function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  color="warning"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -137,12 +141,13 @@ export default function SignUp() {
                   type="password"
                   id="password_confirmation"
                   autoComplete="password_confirmation"
+                  color="warning"
                 />
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
                   control={
-                    <Checkbox value="allowExtraEmails" color="primary" />
+                    <Checkbox value="allowExtraEmails" color="warning" />
                   }
                   label="I want to receive inspiration, marketing promotions and updates via email."
                 />
@@ -153,6 +158,7 @@ export default function SignUp() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              color="warning"
             >
               Sign Up
             </Button>

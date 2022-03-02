@@ -7,8 +7,7 @@ Column,
 FooterLink,
 Heading,
 } from "./FooterStyles";
-import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField";
+import {Link} from 'react-router-dom';
 
 const Footer = () => {
 return (
@@ -60,8 +59,7 @@ return (
 			</FooterLink>
 		</Column>
 		<Column>
-			<Heading>Contact Us</Heading>
-			
+		<Link to='/contactus' replace style={{ textDecoration: 'none' }}><Heading>Contact Us</Heading></Link>
 		</Column>
 		</Row>
 	</Container>
