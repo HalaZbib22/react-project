@@ -45,15 +45,22 @@ export default function Form() {
       subject: data.get("subject"),
       message: data.get("message"),
     };
-    console.log(userData);
-    try {
+    // console.log(userData.message.length);
+  try {
+      if(userData.message.length <= 100 ){
       await axios.post(Contact_Us_URL, userData);
       toast.success("Message sent successfully", {
         position: toast.POSITION.TOP_RIGHT,
         autoClose: 4000,
       });
       navigate("/");
-    } catch (err) {
+    }else{
+      toast.error("Message exceeds limit ( 100 character )", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 4000,
+      });
+    }
+    }catch (err) {
       console.log(err);
     }
   };
