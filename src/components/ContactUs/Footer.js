@@ -60,7 +60,7 @@ return (
 		</Column>
 		<Column>
 		<buttonStyle/>
-		<Link to='/contact-us' className={"cstyle.buttonStyle"} replace style={{ textDecoration: 'none', cursor:'pointer' }}><Heading>Contact Us</Heading></Link>
+		<Link to='/contact-us' replace style={{ textDecoration: 'none', cursor:'pointer' }}><Heading>Contact Us</Heading></Link>
 		</Column>
 		</Row>
 	</Container>
