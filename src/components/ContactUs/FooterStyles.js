@@ -40,7 +40,7 @@ grid-gap: 20px;
 
 export const FooterLink = styled.a`
 color: #fff;
-margin-bottom: 20px;
+margin-bottom: 10px;
 font-size: 18px;
 text-decoration: none;
 
