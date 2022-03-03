@@ -9,7 +9,7 @@ Heading,
 } from "./FooterStyles";
 import {Link} from 'react-router-dom';
 
-const Footer = () => {
+export default function Footer(){
 return (
 	<Box>
 	<Container>
@@ -59,11 +59,11 @@ return (
 			</FooterLink>
 		</Column>
 		<Column>
-		<Link to='/contact-us' replace style={{ textDecoration: 'none', cursor:'pointer' }}><Heading>Contact Us</Heading></Link>
+		<buttonStyle/>
+		<Link to='/contact-us' className={"cstyle.buttonStyle"} replace style={{ textDecoration: 'none', cursor:'pointer' }}><Heading>Contact Us</Heading></Link>
 		</Column>
 		</Row>
 	</Container>
 	</Box>
 );
-};
-export default Footer;
+}

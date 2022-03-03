@@ -1,7 +1,6 @@
 import React from 'react';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
-import Navbar from './components/parts/Navbar';
 import Blog from './components/parts/Blog';
 import Home from './components/Home';
 import Form from './components/ContactUs/Form';

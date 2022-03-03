@@ -50,6 +50,13 @@ text-decoration: none;
 }
 `;
 
+// export const Scale = 
+// "&:hover" {
+// 	transform: "scale(2)',
+// 	transition: 200ms ease-in;
+// }
+// `;
+
 export const Heading = styled.p`
 font-size: 24px;
 color: #fff;

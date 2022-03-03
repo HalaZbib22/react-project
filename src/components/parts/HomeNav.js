@@ -7,7 +7,6 @@ import Button from "@mui/material/Button";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import { Avatar } from '@mui/material';
 
 toast.configure();
 
@@ -38,13 +37,13 @@ export default function ButtonAppBar() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, marginTop: 15 }}>
       <AppBar position="fixed" color="warning">
         <Toolbar>
         {/* <Avatar src="/broken-image.jpg" /> &nbsp;&nbsp; */}
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link
-              to="/"
+              to="/home"
               style={{
                 textDecoration: "none",
                 color: "white",

@@ -1,19 +1,19 @@
 import * as React from "react";
-import {Link} from 'react-router-dom';
-import Avatar from "@mui/material/Avatar";
+import { Avatar } from '@mui/material';
+import HomeNav from './parts/HomeNav';
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import BorderColorIcon from '@mui/icons-material/BorderColor';
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate, Link } from 'react-router-dom';
 
 function Copyright(props) {
 	return (
@@ -37,40 +37,50 @@ const theme = createTheme();
 
 export default function Home(){
 	const ttoken = JSON.parse(localStorage.getItem('token'));
-	const userName = ttoken.user.name;
+	const sendData = {};
   	const navigate = useNavigate();
   	const Update_URL = "http://127.0.0.1:8000/api/auth/update";
 
   const handleSubmit = async(e) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    // eslint-disable-next-line no-console
     let userData = {
       name: data.get('firstName')+' '+data.get('lastName'),
       email: data.get('email'),
       password: data.get('password'),
       password_confirmation: data.get('password_confirmation'),
     }
-	console.log("inside handle")
+	console.log(sendData);
+	if (userData.name !== '' ){
+		 sendData["name"] = userData.name;
+		}
+	if (userData.email !== '' ){
+		sendData["email"] = userData.email;
+		}
+	if (userData.password !== '' ){
+		sendData["password"] = userData.password;
+		}
+	console.log(sendData);
     try {
 		const response = await axios.post(
-			API_URL + "update-profile",
-			userData,
-			{ Authorization: `Bearer ${userName.access_token}` },
+			Update_URL,
+			sendData, { headers: { Authorization: `Bearer ${ttoken.access_token}`},}
 		  );
-      console.log(response?.data);
-      console.log('SUCCESS');
-      navigate("/home");
+		toast.success("edited successfully!", {
+			position: toast.POSITION.TOP_CENTER,
+			autoClose: 4000,
+			});
+      	console.log('SUCCESS');
+      	navigate("/home");
     } catch (err) {
       console.log(err);
-
     }
-
 };
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
+		<HomeNav/>
         <Box
           sx={{
             marginTop: 8,
@@ -80,10 +90,10 @@ export default function Home(){
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "warning.main" }}>
-            <LockOutlinedIcon />
+            <BorderColorIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            Edit Profile
           </Typography>
           <Box
             component="form"
@@ -95,7 +105,6 @@ export default function Home(){
                 <TextField
                   autoComplete="given-name"
                   name="firstName"
-                  required
                   fullWidth
                   id="firstName"
                   label="First Name"
@@ -105,7 +114,6 @@ export default function Home(){
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  required
                   fullWidth
                   id="lastName"
                   label="Last Name"
@@ -116,7 +124,6 @@ export default function Home(){
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  required
                   fullWidth
                   id="email"
                   label="Email Address"
@@ -127,7 +134,6 @@ export default function Home(){
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  required
                   fullWidth
                   name="password"
                   label="Password"
@@ -139,7 +145,6 @@ export default function Home(){
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  required
                   fullWidth
                   name="password_confirmation"
                   label="Confirm Password"
@@ -147,14 +152,6 @@ export default function Home(){
                   id="password_confirmation"
                   autoComplete="password_confirmation"
                   color="warning"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={
-                    <Checkbox value="allowExtraEmails" color="warning" />
-                  }
-                  label="I want to receive inspiration, marketing promotions and updates via email."
                 />
               </Grid>
             </Grid>
@@ -167,13 +164,6 @@ export default function Home(){
             >
               Edit
             </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link to='/signin' replace variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
         <Copyright sx={{ mt: 5 }} />

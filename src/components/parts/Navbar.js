@@ -21,27 +21,27 @@ export default function ButtonAppBar() {
   const registerClick = () => {
     navigate("/signin");
   };
-  const logoutClick = () => {
-    ttoken == null ? cantLogOut() : logout();
-  };
-  const logout = () => {
-    navigate("/");
-    localStorage.removeItem("token");
-    loggedOut();
-  };
-  const loggedOut = () => {
-    console.log("Logged out successfully!");
-    toast.success("Logged out successfully!", {
-      position: toast.POSITION.TOP_CENTER,
-      autoClose: 4000,
-    });
-  };
-  const cantLogOut = () => {
-    toast.warn("You're not logged in!", {
-      position: toast.POSITION.TOP_CENTER,
-      autoClose: 4000,
-    });
-  };
+  // const logoutClick = () => {
+  //   ttoken == null ? cantLogOut() : logout();
+  // };
+  // const logout = () => {
+  //   navigate("/");
+  //   localStorage.removeItem("token");
+  //   loggedOut();
+  // };
+  // const loggedOut = () => {
+  //   console.log("Logged out successfully!");
+  //   toast.success("Logged out successfully!", {
+  //     position: toast.POSITION.TOP_CENTER,
+  //     autoClose: 4000,
+  //   });
+  // };
+  // const cantLogOut = () => {
+  //   toast.warn("You're not logged in!", {
+  //     position: toast.POSITION.TOP_CENTER,
+  //     autoClose: 4000,
+  //   });
+  // };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -69,11 +69,11 @@ export default function ButtonAppBar() {
               Register
             </Button>
           </Link>
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+          {/* <Link to="/" style={{ textDecoration: "none", color: "white" }}>
             <Button onClick={logoutClick} color="inherit" fontWeight='bold' style={{fontSize:20}}>
               Logout
             </Button>
-          </Link>
+          </Link> */}
         </Toolbar>
       </AppBar>
     </Box>
