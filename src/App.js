@@ -4,6 +4,7 @@ import SignUp from './components/SignUp';
 import Blog from './components/parts/Blog';
 import Home from './components/Home';
 import Form from './components/ContactUs/Form';
+import NotFound from './NotFound';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import ProtectedRoutes from './ProtectedRoutes';
 
@@ -19,6 +20,7 @@ function App() {
             <Route path='/signin' element={<SignIn/>}/>
             <Route path='/signup' element={<SignUp/>}/>
             <Route path='/contact-us' element={<Form/>}/>
+            <Route path='*' element={<NotFound/>}/>
           </Routes>
           </BrowserRouter>
       </div>
