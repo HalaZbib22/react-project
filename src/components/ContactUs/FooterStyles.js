@@ -45,7 +45,7 @@ font-size: 18px;
 text-decoration: none;
 
 &:hover {
-	color: green;
+	color: black;
 	transition: 200ms ease-in;
 }
 `;

@@ -7,7 +7,21 @@ Column,
 FooterLink,
 Heading,
 } from "./FooterStyles";
+import Typography from '@mui/material/Typography';
 import {Link} from 'react-router-dom';
+
+function Copyright(props) {
+	return (
+	  <Typography variant="body2" color="text.secondary" align="center" {...props}>
+		{'Copyright © '}
+		<Link color="inherit" to="/contact-us">
+		  Contact Us
+		</Link>{' '}
+		{new Date().getFullYear()}
+		{'.'}
+	  </Typography>
+	);
+  }
 
 export default function Footer(){
 return (
@@ -59,10 +73,10 @@ return (
 			</FooterLink>
 		</Column>
 		<Column>
-		<buttonStyle/>
-		<Link to='/contact-us' replace style={{ textDecoration: 'none', cursor:'pointer' }}><Heading>Contact Us</Heading></Link>
+		{/* <Link to='/contact-us' replace style={{ textDecoration: 'none', cursor:'pointer' }}><Heading>Contact Us</Heading></Link> */}
 		</Column>
 		</Row>
+		<Copyright sx={{ mt: 8, mb: 4 }} />
 	</Container>
 	</Box>
 );

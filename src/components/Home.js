@@ -17,18 +17,13 @@ import { useNavigate, Link } from 'react-router-dom';
 
 function Copyright(props) {
 	return (
-	  <Typography
-		variant="body2"
-		color="text.secondary"
-		align="center"
-		{...props}
-	  >
-		{"Copyright © "}
-		<Link color="inherit" to="https://mui.com/">
-		  Your Website
-		</Link>{" "}
+	  <Typography variant="body2" color="text.secondary" align="center" {...props}>
+		{'Copyright © '}
+		<Link color="inherit" to="/contact-us">
+		  Contact Us
+		</Link>{' '}
 		{new Date().getFullYear()}
-		{"."}
+		{'.'}
 	  </Typography>
 	);
   }
