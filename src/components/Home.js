@@ -40,7 +40,7 @@ export default function Home(){
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     let userData = {
-      name: data.get('firstName')+' '+data.get('lastName'),
+      name: data.get('name'),
       email: data.get('email'),
       password: data.get('password'),
       password_confirmation: data.get('password_confirmation'),
@@ -96,24 +96,14 @@ export default function Home(){
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <TextField
                   autoComplete="given-name"
-                  name="firstName"
+                  name="name"
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="name"
+                  label="Name"
                   autoFocus
-                  color="warning"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
                   color="warning"
                 />
               </Grid>
